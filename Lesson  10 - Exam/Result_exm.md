@@ -1,6 +1,6 @@
 # Create DB
 
-## use mongo_practice
+### use mongo_practice
 ```javascript
 * switched to db mongo_practice
 ```
@@ -8,17 +8,19 @@
 
 
 # Create Collection
+```javascript
+ * db.createCollection("movie")
 ```
-## db.createCollection("movie")
+### Result
 ```javascript
 * { "ok" : 1 }
-
 ```
 
 
 # Insert Documents
 ```
-db.movie.insert([{title : "Fight Club",
+* db.movie.insert(
+[{title : "Fight Club",
 writer : "Chuck Palahniuk",
 year : 1999,
 actors : [
@@ -63,6 +65,8 @@ synopsis : "Bilbo and Company are forced to engage in a war against an array of 
 {title : "Pee Wee Herman's Big Adventure"},
 
 {title : "Avatar"}])
+```
+### Result
 ```javascript
 BulkWriteResult({
         "writeErrors" : [ ],
@@ -75,21 +79,52 @@ BulkWriteResult({
         "upserted" : [ ]
 })
 ```
-```
+
 # Query / Find Documents
 ```
-db.getCollection('movie').find({})
-db.movie.find().pretty()
+* db.getCollection('movie').find({})
+```
+### Result
+```javascript
+```
+```javascript
+* db.movie.find().pretty()
+```
+### Result
+```javascript
+```
 // 2
-db.movie.find({writer:"Quentin Tarantino"}).pretty()
+```javascript
+* db.movie.find({writer:"Quentin Tarantino"}).pretty()
+```
+### Result
+```javascript
+```
 // 3
-db.movie.find({actors:{$in: ["Brad Pitt"]}}).pretty()
-// 4
-db.movie.find({franchise:"The Hobbit"}).pretty()
-// 5
-db.movie.find({year: { $gte :  1900, $lte : 1999}}).pretty()
-// 6
-db.movie.find({year: { $gte :  2000, $lte : 2010}}).pretty()
+```javascript
+* db.movie.find({actors:{$in: ["Brad Pitt"]}}).pretty()
+```
+### Result
+```javascript
+```
+```javascript
+* db.movie.find({franchise:"The Hobbit"}).pretty()
+```
+### Result
+```javascript
+```
+```javascript
+* db.movie.find({year: { $gte :  1900, $lte : 1999}}).pretty()
+```
+### Result
+```javascript
+```
+```javascript
+* db.movie.find({year: { $gte :  2000, $lte : 2010}}).pretty()
+```
+### Result
+```javascript
+```
 ```
 # Update Documents
 ```
