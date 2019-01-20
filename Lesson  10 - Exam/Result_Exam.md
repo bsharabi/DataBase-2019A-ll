@@ -146,7 +146,7 @@ BulkWriteResult({
 }
 { "_id" : ObjectId("5c44670abbae7baecf6983a1"), "title" : "Avatar" }
 ```
-
+## Command content
 ```javascript
 * db.movie.find().pretty()
 ```
@@ -211,7 +211,7 @@ BulkWriteResult({
 }
 { "_id" : ObjectId("5c44670abbae7baecf6983a1"), "title" : "Avatar" }
 ```
-
+## Command content
 ```javascript
 * db.movie.find({writer:"Quentin Tarantino"}).pretty()
 ```
@@ -239,7 +239,7 @@ BulkWriteResult({
         ]
 }
 ```
-
+## Command content
 ```javascript
 * db.movie.find({actors:{$in: ["Brad Pitt"]}}).pretty()
 ```
@@ -267,7 +267,7 @@ BulkWriteResult({
         ]
 }
 ```
-
+## Command content
 ```javascript
 * db.movie.find({franchise:"The Hobbit"}).pretty()
 ```
@@ -296,6 +296,7 @@ BulkWriteResult({
         "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
 }
 ```
+## Command content
 ```javascript
 * db.movie.find({year: { $gte :  1900, $lte : 1999}}).pretty()
 ```
@@ -322,7 +323,7 @@ BulkWriteResult({
         ]
 }
 ```
-
+## Command content
 ```javascript
 * db.movie.find({year: { $gte :  2000, $lte : 2010}}).pretty()
 ```
@@ -339,10 +340,6 @@ BulkWriteResult({
                 "Eli Roth"
         ]
 }
-```
-### Result
-```javascript
-
 ```
 
 # Update Documents
@@ -366,7 +363,7 @@ BulkWriteResult({
         "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
 }
 ```
-
+## Command content
 ```javascript
 * db.movie.findAndModify(
 {
@@ -386,7 +383,7 @@ BulkWriteResult({
         "franchise" : "The Hobbit"
 }
 ```
-
+## Command content
 ``` javascript
 * db.movie.findAndModify(
 {
@@ -441,6 +438,7 @@ BulkWriteResult({
         "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
 }
 ```
+## Command content
 ```javascript
 * db.movie.find({synopsis: {$regex: /Gandalf/}}).pretty()
 ```
@@ -456,6 +454,7 @@ BulkWriteResult({
         "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
 }
 ```
+## Command content
 ```javascript
 * db.movie.find({synopsis: /(?=^.*Bilbo)(?!^.*Gandalf).*/}).pretty()
 ```
@@ -478,6 +477,7 @@ BulkWriteResult({
         "synopsis" : "Bilbo and Company are forced to engage in a war against an array of combatants and keep the Lonely Mountain from falling into the hands of a rising darkness."
 }
 ```
+## Command content
 ```javascript
 * db.movie.find({$or:[{synopsis: /dwarves/ },{synopsis:/hobbit/}]}).pretty()
 ```
@@ -500,6 +500,7 @@ BulkWriteResult({
         "synopsis" : "The dwarves, along with Bilbo Baggins and Gandalf the Grey, continue their quest to reclaim Erebor, their homeland, from Smaug. Bilbo Baggins is in possession of a mysterious and magical ring."
 }
 ```
+## Command content
 ```javascript
 * db.movie.find({$and:[{synopsis: /gold/ },{synopsis:/dragon/}]}).pretty()
 ```
@@ -514,10 +515,6 @@ BulkWriteResult({
         "synopsis" : "A reluctant hobbit, Bilbo Baggins, sets out to the Lonely Mountain with a spirited group of dwarves to reclaim their mountain home - and the gold within it - from the dragon Smaug."
 }
 ```
-### Result
-```javascript
-
-```
 
 # Delete Documents
 ```javascript
@@ -527,7 +524,7 @@ BulkWriteResult({
 ```javascript
 WriteResult({ "nRemoved" : 1 })
 ```
-
+## Command content
 ```javascript
 * db.movie.remove({title: "Avatar"})
 ```
